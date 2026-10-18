@@ -1,0 +1,98 @@
+:root {
+  --bg: #f7f7f5;
+  --surface: #ffffff;
+  --text: #1c1c1a;
+  --muted: #5f5f5a;
+  --border: #e2e2dd;
+  --accent: #2456c7;
+  --chip: #eef1f8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141414;
+    --surface: #1d1d1c;
+    --text: #ececea;
+    --muted: #a3a39e;
+    --border: #2f2f2d;
+    --accent: #7fa4ff;
+    --chip: #262a35;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+header, main, footer {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+header { padding-top: 32px; }
+h1 { margin: 0 0 4px; font-size: 1.8rem; }
+.lede { margin: 0 0 24px; color: var(--muted); }
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.filters select, .filters input {
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 6px 8px;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.count { color: var(--muted); font-size: 0.9rem; }
+
+.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+
+.card {
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.card-head { display: flex; align-items: baseline; gap: 10px; }
+.rank { font-weight: 700; color: var(--muted); }
+.card h2 { margin: 0; font-size: 1.2rem; }
+.card h2 a { color: var(--text); text-decoration: none; }
+.card h2 a:hover { text-decoration: underline; }
+
+.specs { list-style: none; padding: 0; margin: 10px 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.specs li { background: var(--chip); padding: 2px 8px; border-radius: 999px; font-size: 0.85rem; }
+
+.why { margin: 0 0 12px; }
+
+.buy { display: grid; gap: 6px; border-top: 1px solid var(--border); padding-top: 12px; }
+.buy-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; }
+.buy-country { min-width: 110px; font-weight: 600; font-size: 0.9rem; }
+.buy a { color: var(--accent); font-size: 0.9rem; }
+
+footer { padding-top: 24px; padding-bottom: 40px; color: var(--muted); font-size: 0.85rem; }
+footer code { font-size: 0.85em; }
