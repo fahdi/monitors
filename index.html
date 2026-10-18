@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Monitors for Coding</title>
-  <meta name="description" content="Top monitors for coding, available in India, UAE and Pakistan, with links to sellers.">
+  <title>Monitor Picks</title>
+  <meta name="description" content="Top monitors for coding and gaming, available in India, UAE and Pakistan, with links to sellers.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Monitors for Coding</h1>
-    <p class="lede">The top five coding monitors sold in India, UAE and Pakistan, with links to sellers in each country.</p>
+    <h1>Monitor Picks</h1>
+    <p class="lede">The top five monitors in each category, sold in India, UAE and Pakistan, with links to sellers in each country.</p>
   </header>
 
   <main>
     <form id="filters" class="filters" aria-label="Filters">
+      <label>Category
+        <select name="category"></select>
+      </label>
       <label>Country
         <select name="country">
           <option value="">All countries</option>
@@ -33,6 +36,7 @@
       <label>Max price (USD list)
         <select name="budget">
           <option value="">Any</option>
+          <option value="300">Up to $300</option>
           <option value="450">Up to $450</option>
           <option value="600">Up to $600</option>
         </select>
@@ -42,6 +46,7 @@
           <option value="rank">Rank</option>
           <option value="price">Price (low → high)</option>
           <option value="size">Size (large → small)</option>
+          <option value="refresh">Refresh rate (high → low)</option>
         </select>
       </label>
       <label>Search
@@ -49,12 +54,13 @@
       </label>
     </form>
 
+    <p id="blurb" class="blurb"></p>
     <p id="count" class="count" aria-live="polite"></p>
     <ol id="list" class="list"></ol>
   </main>
 
   <footer>
-    <p>The USD price is the approximate list price, used only for sorting. Local prices and stock change often, so check each seller's page. Seller links open a search for the exact model.</p>
+    <p>The USD price is the approximate list price, used only for sorting. Local prices and stock change often, so check each seller's page. Seller links open a search for the exact model. Your filters are saved in the page address, so you can share the link.</p>
     <p>Want to add a monitor? Edit <code>data/monitors.js</code> and open a pull request.</p>
   </footer>
 
