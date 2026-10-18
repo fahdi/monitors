@@ -2,7 +2,7 @@
 
 A simple, filterable list of monitors that you can buy in **India**, **UAE** and **Pakistan**, with links to sellers in each country.
 
-It starts with the **top 5 monitors for coding**:
+### Top 5 for coding
 
 | # | Monitor | Size | Resolution | Why it's good for code |
 |---|---------|------|------------|------------------------|
@@ -11,6 +11,16 @@ It starts with the **top 5 monitors for coding**:
 | 3 | LG DualUp 28MQ780-B | 27.6" | 2560×2880 (16:18) | Like two stacked QHD screens; editor above terminal |
 | 4 | LG 27UP850N-W | 27" | 3840×2160 | Affordable 4K with 96W USB-C |
 | 5 | Dell P2723DE | 27" | 2560×1440 | Budget QHD with USB-C hub |
+
+### Top 5 for gaming
+
+| # | Monitor | Size | Resolution | Refresh | Why it's good for games |
+|---|---------|------|------------|---------|-------------------------|
+| 1 | LG UltraGear 27GP850-B | 27" | 2560×1440 | 165Hz | Fast Nano IPS, all-round favourite |
+| 2 | MSI MAG 274QRF-QD | 27" | 2560×1440 | 165Hz | Quantum-dot colour for less |
+| 3 | ASUS TUF Gaming VG27AQ1A | 27" | 2560×1440 | 170Hz | Value IPS, widely stocked |
+| 4 | Gigabyte M27Q | 27" | 2560×1440 | 170Hz | Built-in KVM to share with a work laptop |
+| 5 | Samsung Odyssey G5 (LS27CG510) | 27" | 2560×1440 | 165Hz | Budget VA with deep blacks |
 
 ## Where to buy
 
@@ -32,7 +42,7 @@ No build step. Open `index.html` in a browser to use it locally.
 
 The workflow `.github/workflows/pages.yml` publishes the site on every push to `main`. One-time setup: go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**. The site will be at `https://fahdi.github.io/monitors/`.
 
-Filters: country, resolution (QHD / 4K+), max price, search, and sort by rank, price or size.
+Filters: category, country, resolution (QHD / 4K+), max price and search. Sort by rank, price, size or refresh rate. The filters are saved in the page address (for example `?category=gaming&country=PK`), so you can share a filtered view.
 
 ## Adding or updating a monitor
 
@@ -51,7 +61,7 @@ All data lives in [`data/monitors.js`](data/monitors.js). Add an entry to `MONIT
   aspect: "16:9",
   panel: "IPS",
   refresh: 60,
-  usbcWatts: 90,                 // 0 if no USB-C power delivery
+  usbcWatts: 90,                 // 0 for none, null if unknown
   priceUsd: 499,
   why: "One line on why it's good.",
   countries: ["IN", "AE", "PK"],
@@ -61,4 +71,6 @@ All data lives in [`data/monitors.js`](data/monitors.js). Add an entry to `MONIT
 }
 ```
 
-To add a store, add it to `SELLERS` for that country.
+`rank` is per category. To add a category, add it to `CATEGORIES`. To add a store, add it to `SELLERS` for that country.
+
+Check your changes with `node scripts/validate.js`. CI runs the same check on every pull request.

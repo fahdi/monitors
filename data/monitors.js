@@ -1,9 +1,10 @@
 // Monitor catalogue. Edit this file to add or update monitors.
 //
 // Each monitor lists the countries it is sold in. Seller links are built from
-// the templates in SELLERS (see below) using `query`, unless a monitor gives an
-// explicit `url` for a seller.
+// the templates in SELLERS (see below) using `query`, unless a monitor pins a
+// product page under `sellers[country][sellerId]`. `rank` is per category.
 //
+// `usbcWatts` is USB-C power delivery in watts: 0 for none, null if unknown.
 // `priceUsd` is the approximate launch/list price in USD, used only to sort and
 // filter by budget. Local prices change often, so always check the seller page.
 
@@ -20,6 +21,11 @@ window.SELLERS = {
     { id: "daraz", name: "Daraz.pk", search: "https://www.daraz.pk/catalog/?q={q}" },
     { id: "czone", name: "Czone", search: "https://www.czone.com.pk/search.aspx?kw={q}" },
   ],
+};
+
+window.CATEGORIES = {
+  coding: { name: "Coding", blurb: "Sharp text, plenty of screen space, and one-cable USB-C for laptops." },
+  gaming: { name: "Gaming", blurb: "High refresh rate at 1440p, the sweet spot for most graphics cards." },
 };
 
 window.COUNTRIES = {
@@ -118,5 +124,95 @@ window.MONITORS = [
     why: "Budget pick: 27\" QHD at 100% scaling (about 109 PPI) with a USB-C hub and Ethernet. Text is crisp enough for all-day coding without paying for 4K.",
     countries: ["IN", "AE", "PK"],
     official: "https://www.dell.com/en-in/shop/dell-27-usb-c-hub-monitor-p2723de/apd/210-bdmp/monitors-monitor-accessories",
+  },
+  {
+    id: "lg-27gp850",
+    rank: 1,
+    brand: "LG",
+    model: "UltraGear 27GP850-B",
+    query: "LG 27GP850",
+    category: "gaming",
+    size: 27,
+    resolution: "2560x1440",
+    aspect: "16:9",
+    panel: "Nano IPS",
+    refresh: 165,
+    usbcWatts: 0,
+    priceUsd: 449,
+    why: "Fast Nano IPS with 1ms response and wide colour. A long-standing all-round favourite for 1440p gaming.",
+    countries: ["IN", "AE", "PK"],
+    official: "https://www.lg.com/us/monitors/lg-27gp850-b-gaming-monitor",
+  },
+  {
+    id: "msi-mag-274qrf-qd",
+    rank: 2,
+    brand: "MSI",
+    model: "MAG 274QRF-QD",
+    query: "MSI MAG 274QRF-QD",
+    category: "gaming",
+    size: 27,
+    resolution: "2560x1440",
+    aspect: "16:9",
+    panel: "Rapid IPS (Quantum Dot)",
+    refresh: 165,
+    usbcWatts: 0,
+    priceUsd: 349,
+    why: "Quantum-dot colour and quick response for less money than most rivals, with a height-adjustable stand.",
+    countries: ["IN", "AE", "PK"],
+    official: "https://www.msi.com/Monitor/MAG-274QRF-QD",
+  },
+  {
+    id: "asus-vg27aq1a",
+    rank: 3,
+    brand: "ASUS",
+    model: "TUF Gaming VG27AQ1A",
+    query: "ASUS VG27AQ1A",
+    category: "gaming",
+    size: 27,
+    resolution: "2560x1440",
+    aspect: "16:9",
+    panel: "IPS",
+    refresh: 170,
+    usbcWatts: 0,
+    priceUsd: 279,
+    why: "Value 1440p IPS with a 170Hz overclock and motion-blur reduction. Stocked by most stores in all three countries.",
+    countries: ["IN", "AE", "PK"],
+    official: "https://www.asus.com/displays-desktops/monitors/tuf-gaming/tuf-gaming-vg27aq1a/",
+  },
+  {
+    id: "gigabyte-m27q",
+    rank: 4,
+    brand: "Gigabyte",
+    model: "M27Q",
+    query: "Gigabyte M27Q",
+    category: "gaming",
+    size: 27,
+    resolution: "2560x1440",
+    aspect: "16:9",
+    panel: "IPS",
+    refresh: 170,
+    usbcWatts: null,
+    priceUsd: 299,
+    why: "170Hz IPS with a built-in KVM switch, so one keyboard and mouse can move between a gaming PC and a work laptop.",
+    countries: ["IN", "AE", "PK"],
+    official: "https://www.gigabyte.com/Monitor/M27Q",
+  },
+  {
+    id: "samsung-odyssey-g5",
+    rank: 5,
+    brand: "Samsung",
+    model: "Odyssey G5 (LS27CG510)",
+    query: "Samsung Odyssey G5 27 QHD",
+    category: "gaming",
+    size: 27,
+    resolution: "2560x1440",
+    aspect: "16:9",
+    panel: "VA",
+    refresh: 165,
+    usbcWatts: 0,
+    priceUsd: 299,
+    why: "Budget pick: a VA panel gives deep blacks for dark games and films. Slower pixel response than IPS.",
+    countries: ["IN", "AE", "PK"],
+    official: "https://www.samsung.com/us/computing/monitors/gaming/27-odyssey-g51c-qhd-165hz-1ms-amd-freesync-premium-gaming-monitor-ls27cg510enxza/",
   },
 ];
